@@ -1,1 +1,1 @@
-# Vue.js / Typescript Übungsprojekt
+# Vue.js / Typescript Übungsprojekt Portfolio
