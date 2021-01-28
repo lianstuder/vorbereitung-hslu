@@ -1,6 +1,7 @@
 import App from "./app";
 
-import * as bodyParser from "body-parser";
+import bodyParser from "body-parser";
+import cors from "cors";
 import mongoose from "mongoose"
 
 import * as dotenv from "dotenv";
@@ -25,7 +26,8 @@ new App({
     ],
     middlewares: [
         bodyParser.json(),
-        bodyParser.urlencoded({ extended: true })
+        bodyParser.urlencoded({ extended: true }),
+        cors()
     ]
 }).listen();
 
