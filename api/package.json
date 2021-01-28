@@ -4,7 +4,7 @@
   "description": "Project REST API",
   "main": "src/index.ts",
   "scripts": {
-    "serve": "nodemon .",
+    "serve": "nodemon src/index.ts",
     "build": "tsc -p .",
     "lint": "eslint src/**"
   },
