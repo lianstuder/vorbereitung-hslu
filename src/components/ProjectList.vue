@@ -17,7 +17,7 @@ import { Component, Vue } from "vue-property-decorator";
 import Project from "./Project.vue";
 
 interface ProjectInterface {
-  pjId: number;
+  _id: string;
   pjName: string;
   pjDesc: string;
   pjGithub: string;
@@ -36,7 +36,7 @@ async function getProjects<P>(url: RequestInfo): Promise<P> {
 })
 export default class ProjectList extends Vue {
   private projects = getProjects<ProjectInterface[]>(
-    "./assets/example_response.json"
+    "http://localhost:5000/"
   );
 }
 </script>
