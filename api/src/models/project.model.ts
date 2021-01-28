@@ -1,17 +1,12 @@
 import * as mongoose from "mongoose";
 
 interface IProject extends mongoose.Document {
-    pjId: number;
     pjName: string;
     pjDesc: string;
     pjGithub: string;
 }
 
 const ProjectSchema = new mongoose.Schema({
-    pjId: {
-        type: Number,
-        required: true
-    },
     pjName: {
         type: String,
         required: true
