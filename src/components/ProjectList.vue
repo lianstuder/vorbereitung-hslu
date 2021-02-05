@@ -15,6 +15,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Project from "./Project.vue";
+import axios from "axios";
 
 interface ProjectInterface {
   _id: string;
@@ -23,10 +24,8 @@ interface ProjectInterface {
   pjGithub: string;
 }
 
-async function getProjects<P>(url: RequestInfo): Promise<P> {
-  const response = await fetch(url);
-  const body = await response.json();
-  return body;
+async function getProjects<P>(url: string): Promise<P> {
+  return await axios.get(url);
 }
 
 @Component({
