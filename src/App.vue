@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <h1 id="page-title">Lian Studer</h1>
+    <span class="mdi mdi-github-circle" role="img"></span>
     <h2>My Projects</h2>
-    <ProjectList></ProjectList>
   </div>
 </template>
 
