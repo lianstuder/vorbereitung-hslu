@@ -1,0 +1,45 @@
+@import "./variables";
+
+@mixin flex-center($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+}
+
+#app {
+  @include flex-center(column);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $fontColor;
+  margin-top: 60px;
+}
+
+.project {
+  border: 2px solid $secondaryColor;
+  padding: 10px;
+
+  a,
+  a span {
+    color: $fontColor;
+  }
+
+  div {
+    border-bottom: 1px solid $primaryColor;
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+  }
+
+  h2 {
+    padding: 10px 0;
+  }
+}
+
+.projectlist {
+  margin-top: 20px;
+  width: 300px;
+  ul {
+    list-style-type: none;
+  }
+}

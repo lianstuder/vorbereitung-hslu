@@ -17,26 +17,23 @@ import { Component, Vue } from "vue-property-decorator";
 import Project from "./Project.vue";
 import axios from "axios";
 
-interface ProjectInterface {
-  _id: string;
-  pjName: string;
-  pjDesc: string;
-  pjGithub: string;
-}
-
-async function getProjects<P>(url: string): Promise<P> {
-  return await axios.get(url);
-}
-
 @Component({
   components: {
-    Project
-  }
+    Project,
+  },
 })
 export default class ProjectList extends Vue {
-  private projects = getProjects<ProjectInterface[]>(
-    "http://localhost:5000/"
-  );
+  projects = {};
+
+  async getProjects(url: string) {
+    return await axios.get(url);
+  }
+
+  created() {
+    this.getProjects("http://localhost:5000/").then((projects) => {
+      this.projects = projects.data;
+    });
+  }
 }
 </script>
 

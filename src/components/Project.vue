@@ -1,8 +1,10 @@
 <template>
   <div class="project">
-    <h2>{{ name }}</h2>
-    <p>{{ description }}</p>
-    <a :href="githubUrl"></a>
+    <div>
+      <h2>{{ name }}</h2>
+      <p>{{ description }}</p>
+    </div>
+    <a :href="githubUrl"><span class="mdi mdi-github"></span></a>
   </div>
 </template>
 
